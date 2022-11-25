@@ -1,37 +1,67 @@
 <div class="container">
-  <div class="row">
-    <div class="col-md-12">
-      <header>
-        <h2>Clinicas</h2>
-        <div>
-          <button routerLink="/criar">Adicionar Clinica</button>
-        </div>
-      </header>
-      <table class="table table-striped">
+  <div>
+    <header class="clinicas-header">
+      <h2>Clinicas</h2>
+      <input
+        class="filtro"
+        type="text"
+        name="search"
+        placeholder="Pesquisar Clinica"
+        [(ngModel)]="filtro"
+      />
+      <div>
+        <button routerLink="/criar">
+          <mat-icon>add_circle</mat-icon>
+          <p>Adicionar Clinica</p>
+        </button>
+      </div>
+    </header>
+    <div class="table-container">
+      <table>
         <thead>
           <tr>
-            <th>Nome</th>
+            <th (click)="sort('nome')">
+              Nome <span *ngIf="key == 'nome'">{{ reverse ? "▲" : "▼" }}</span>
+            </th>
             <th>Especialidade</th>
             <th>Telefone</th>
             <th>Estado</th>
-            <th>Endereço</th>
+            <th (click)="sort('endereco')">Endereço</th>
             <th>Horário de Funcionamento</th>
             <th>Cep</th>
             <th>Cnpj</th>
             <th>Preço</th>
             <th>Status</th>
+            <th>Opções</th>
           </tr>
         </thead>
         <tbody>
-          <tr *ngFor="let clinica of listaClinicas">
+          <tr
+            *ngFor="
+              let clinica of listaClinicas
+                | filter: filtro
+                | orderBy: key:reverse
+                | paginate
+                  : {
+                      itemsPerPage: 10,
+                      currentPage: paginaAtual
+                    };
+              let i = index
+            "
+          >
             <td>{{ clinica.nome }}</td>
             <td>{{ clinica.especialidade }}</td>
             <td>{{ clinica.telefone }}</td>
             <td>{{ clinica.estado }}</td>
 
             <td>
-              {{ clinica.bairro }} - {{ clinica["endereço"] }},
-              {{ clinica.numero }}
+              {{
+                clinica.bairro +
+                  " - " +
+                  clinica["endereço"] +
+                  "," +
+                  clinica.numero
+              }}
             </td>
             <td>
               {{ clinica.atendimento.inicio }} - {{ clinica.atendimento.fim }}
@@ -40,10 +70,25 @@
             <td>{{ clinica.cnpj }}</td>
             <td>{{ clinica["preço"] }}</td>
             <td>{{ clinica.status }}</td>
-            <td><a routerLink="/editar/{{ clinica.id }}">Editar</a></td>
-            <td><a routerLink="/excluir/{{ clinica.id }}">Excluir</a></td>
+            <td class="opcoes">
+              <a class="edit" routerLink="/editar/{{ clinica.id }}">
+                <mat-icon>mode_edit_outline</mat-icon></a
+              >
+              <a class="delete" routerLink="/excluir/{{ clinica.id }}"
+                ><mat-icon color="warn">delete</mat-icon></a
+              >
+            </td>
           </tr>
         </tbody>
+        <tfoot>
+          <tr>
+            <td colspan="11">
+              <pagination-controls
+                (pageChange)="paginaAtual = $event"
+              ></pagination-controls>
+            </td>
+          </tr>
+        </tfoot>
       </table>
     </div>
   </div>

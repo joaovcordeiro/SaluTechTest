@@ -9,6 +9,8 @@ import { ClinicasService } from '../../clinicas.service';
 })
 export class ListarClinicasComponent {
   listaClinicas: Clinica[] = [];
+  filtro: string = '';
+  paginaAtual: number = 1;
 
   constructor(private service: ClinicasService) {}
 
@@ -17,5 +19,12 @@ export class ListarClinicasComponent {
       this.listaClinicas = clinicas;
       console.log(clinicas);
     });
+  }
+
+  key: string = 'nome';
+  reverse: boolean = false;
+  sort(key: string) {
+    this.key = key;
+    this.reverse = !this.reverse;
   }
 }

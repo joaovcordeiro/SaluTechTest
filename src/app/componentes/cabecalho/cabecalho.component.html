@@ -2,7 +2,7 @@
   <h2>SaluTech</h2>
 
   <nav>
-    <ul>
+    <ul [ngClass]="toogleMenuColor()">
       <li><a (click)="clinicas()">Clinicas</a></li>
       <li><a (click)="agendamentos()">Agendamentos</a></li>
     </ul>

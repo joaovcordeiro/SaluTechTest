@@ -12,6 +12,8 @@ export class ListarAgendamentosComponent {
 
   listaAgendamentos: Agendamento[] = [];
 
+  filtro: string = '';
+
   ngOnInit(): void {
     this.service.listar().subscribe((agendamentos) => {
       this.listaAgendamentos = agendamentos;
