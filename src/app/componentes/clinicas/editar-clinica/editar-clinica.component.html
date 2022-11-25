@@ -1,0 +1,89 @@
+<section>
+  <header>Adicionar Clinica</header>
+  <form>
+    <label for="nome">Nome</label>
+    <input
+      type="text"
+      id="nome"
+      name="nome"
+      placeholder="Nome"
+      [(ngModel)]="clinica.nome"
+    />
+    <label for="especialidade">Especialidade</label>
+    <input
+      type="text"
+      id="especialidade"
+      name="especialidade"
+      placeholder="Especialidade"
+      [(ngModel)]="clinica.especialidade"
+    />
+    <label for="estado">Estado</label>
+    <input
+      type="text"
+      id="estado"
+      name="estado"
+      placeholder="Estado"
+      [(ngModel)]="clinica.estado"
+    />
+    <label for="cidade">Cidade</label>
+    <input
+      type="text"
+      id="cidade"
+      name="cidade"
+      placeholder="Cidade"
+      [(ngModel)]="clinica.cidade"
+    />
+    <label for="bairro">Bairro</label>
+    <input
+      type="text"
+      id="bairro"
+      name="bairro"
+      placeholder="Bairro"
+      [(ngModel)]="clinica.bairro"
+    />
+    <label for="endereço">Endereço</label>
+    <input
+      type="text"
+      id="endereço"
+      name="nendereçoome"
+      placeholder="Endereço"
+      [(ngModel)]="clinica['endereço']"
+    />
+    <label for="numero">Numero</label>
+    <input
+      type="text"
+      id="numero"
+      name="numero"
+      placeholder="Numero"
+      [(ngModel)]="clinica.numero"
+    />
+    <label for="status">Status</label>
+    <input
+      type="text"
+      id="status"
+      name="status"
+      placeholder="Status"
+      [(ngModel)]="clinica.status"
+    />
+    <label for="preço">Preço</label>
+    <input
+      type="text"
+      id="preço"
+      name="preço"
+      placeholder="Preço"
+      [(ngModel)]="clinica['preço']"
+    />
+    <label for="telefone">Telefone</label>
+    <input
+      type="text"
+      id="telefone"
+      name="telefone"
+      placeholder="Telefone"
+      [(ngModel)]="clinica.telefone"
+    />
+    <div>
+      <button (click)="editar()">Salvar</button>
+      <button (click)="cancelar()">Cancelar</button>
+    </div>
+  </form>
+</section>

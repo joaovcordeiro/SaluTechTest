@@ -1,13 +1,16 @@
 
 
   .cabecalho
-    width: 100vw
-    height: 6rem
-    background-color: #435D7D
+    height: 5rem
+    background-color: #404244
     display: flex
     align-items: center
-    justify-content: space-around
-    padding: 0 2rem
+    justify-content: space-between
+    padding: 0 3rem
+
+    @media (max-width: 780px)
+      padding: 0 16px
+
 
     ul
       display: flex
@@ -28,8 +31,8 @@
             color: #F2F2F2
             cursor: pointer
 
-          @media (max-width: 1250px)
-            font-size: 1em
+          @media (max-width: 780px)
+            font-size: 0.9em
 
   h2
     color: white
@@ -40,4 +43,5 @@
 
     @media (max-width: 1250px)
       font-size: 1.5rem
+
 

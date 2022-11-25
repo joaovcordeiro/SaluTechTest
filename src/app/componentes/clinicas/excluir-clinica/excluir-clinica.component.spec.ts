@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ClinicaComponent } from './clinica.component';
+import { ExcluirClinicaComponent } from './excluir-clinica.component';
 
-describe('ClinicaComponent', () => {
-  let component: ClinicaComponent;
-  let fixture: ComponentFixture<ClinicaComponent>;
+describe('ExcluirClinicaComponent', () => {
+  let component: ExcluirClinicaComponent;
+  let fixture: ComponentFixture<ExcluirClinicaComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ ClinicaComponent ]
+      declarations: [ ExcluirClinicaComponent ]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(ClinicaComponent);
+    fixture = TestBed.createComponent(ExcluirClinicaComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

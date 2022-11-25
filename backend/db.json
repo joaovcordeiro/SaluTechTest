@@ -1,25 +1,6 @@
 {
   "clinicas": [
     {
-      "id": 1,
-      "nome": "Clinica Abc",
-      "cnpj": "56.591.338/0001-10",
-      "especialidade": "Exames Laboratoriais",
-      "telefone": "(22) 1234-4567",
-      "cep": "15430-970",
-      "endereço": "Avenida Quatro",
-      "numero": "290",
-      "bairro": "Centro",
-      "cidade": "Altair",
-      "estado": "SP",
-      "status": "Ativo",
-      "preço": 100.0,
-      "atendimento": {
-        "inicio": "09:00",
-        "fim": "17:00"
-      }
-    },
-    {
       "id": 2,
       "nome": "Ortomed",
       "cnpj": "67718416000110",
@@ -30,7 +11,7 @@
       "numero": 360,
       "bairro": "Centro",
       "cidade": "Águas de São Pedro",
-      "estado": "SP",
+      "estado": "MA",
       "status": "Ativo",
       "preço": 150,
       "atendimento": {
@@ -125,7 +106,7 @@
       "numero": 179,
       "bairro": "Centro",
       "cidade": "Água Doce do Maranhão",
-      "estado": "MA",
+      "estado": "SP",
       "status": "Ativo",
       "preço": 144.9,
       "atendimento": {
@@ -138,56 +119,56 @@
     {
       "id": 1,
       "paciente": "Carlos Aurelio",
-      "idClinica": 2,
+      "clinicasId": 2,
       "dia": "25/11/2022",
       "hora": "12:00"
     },
     {
       "id": 2,
       "paciente": "João Carlos",
-      "idClinica": 2,
+      "clinicasId": 2,
       "dia": "25/11/2022",
       "hora": "13:00"
     },
     {
       "id": 3,
       "paciente": "Alex Ferreira",
-      "idClinica": 3,
+      "clinicasId": 3,
       "dia": "13/11/2022",
       "hora": "11:00"
     },
     {
       "id": 4,
       "paciente": "Mario Ferraz",
-      "idClinica": 5,
+      "clinicasId": 5,
       "dia": "20/11/2022",
       "hora": "10:00"
     },
     {
       "id": 5,
       "paciente": "Alexandre Carlos",
-      "idClinica": 6,
+      "clinicasId": 6,
       "dia": "22/11/2022",
       "hora": "14:00"
     },
     {
       "id": 6,
       "paciente": "João Magno",
-      "idClinica": 7,
+      "clinicasId": 7,
       "dia": "27/11/2022",
       "hora": "13:00"
     },
     {
       "id": 7,
       "paciente": "Marcelo Correia",
-      "idClinica": 5,
+      "clinicasId": 5,
       "dia": "20/11/2022",
       "hora": "12:00"
     },
     {
       "id": 8,
       "paciente": "Mario Antonio",
-      "idClinica": 4,
+      "clinicasId": 4,
       "dia": "11/11/2022",
       "hora": "15:00"
     }

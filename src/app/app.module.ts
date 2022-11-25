@@ -6,20 +6,26 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ListarClinicasComponent } from './componentes/clinicas/listar-clinicas/listar-clinicas.component';
-import { ClinicaComponent } from './componentes/clinicas/clinica/clinica.component';
+import { CriarClinicaComponent } from './componentes/clinicas/criar-clinica/criar-clinica.component';
 import { MatTableModule } from '@angular/material/table';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatSortModule } from '@angular/material/sort';
 import { CabecalhoComponent } from './componentes/cabecalho/cabecalho.component';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatIconModule } from '@angular/material/icon';
+import { ExcluirClinicaComponent } from './componentes/clinicas/excluir-clinica/excluir-clinica.component';
+import { EditarClinicaComponent } from './componentes/clinicas/editar-clinica/editar-clinica.component';
+import { ListarAgendamentosComponent } from './componentes/agendamentos/listar-agendamentos/listar-agendamentos.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ListarClinicasComponent,
-    ClinicaComponent,
     CabecalhoComponent,
+    CriarClinicaComponent,
+    ExcluirClinicaComponent,
+    EditarClinicaComponent,
+    ListarAgendamentosComponent,
   ],
   imports: [
     BrowserModule,

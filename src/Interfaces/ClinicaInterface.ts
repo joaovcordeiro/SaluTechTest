@@ -1,5 +1,5 @@
 export interface Clinica {
-  id: number;
+  id?: number;
   nome: string;
   cnpj: string;
   especialidade: string;
@@ -10,7 +10,7 @@ export interface Clinica {
   bairro: string;
   cidade: string;
   estado: string;
-  status: string;
+  status: 'Ativo' | 'Inativo' | '';
   preço: number;
   atendimento: {
     inicio: string;
