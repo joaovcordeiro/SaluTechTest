@@ -5,13 +5,13 @@ export interface Clinica {
   especialidade: string;
   telefone: string;
   cep: string;
-  endereço: string;
+  endereco: string;
   numero: string;
   bairro: string;
   cidade: string;
   estado: string;
   status: 'Ativo' | 'Inativo' | '';
-  preço: number;
+  preco: number | undefined;
   atendimento: {
     inicio: string;
     fim: string;

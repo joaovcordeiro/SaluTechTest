@@ -1,10 +1,11 @@
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
 import { OrderModule } from 'ngx-order-pipe';
 import { NgxPaginationModule } from 'ngx-pagination';
+import { NgxMaskModule, IConfig } from 'ngx-mask';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -19,6 +20,8 @@ import { MatIconModule } from '@angular/material/icon';
 import { ExcluirClinicaComponent } from './componentes/clinicas/excluir-clinica/excluir-clinica.component';
 import { EditarClinicaComponent } from './componentes/clinicas/editar-clinica/editar-clinica.component';
 import { ListarAgendamentosComponent } from './componentes/agendamentos/listar-agendamentos/listar-agendamentos.component';
+
+export const options: Partial<null | IConfig> | (() => Partial<IConfig>) = null;
 
 @NgModule({
   declarations: [
@@ -43,6 +46,8 @@ import { ListarAgendamentosComponent } from './componentes/agendamentos/listar-a
     Ng2SearchPipeModule,
     OrderModule,
     NgxPaginationModule,
+    NgxMaskModule.forRoot(),
+    ReactiveFormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

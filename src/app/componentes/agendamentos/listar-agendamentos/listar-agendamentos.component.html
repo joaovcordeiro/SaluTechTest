@@ -1,41 +1,37 @@
 <div class="container">
-  <div class="row">
-    <div class="col-md-12">
-      <header>
-        <h2>Agendamentos</h2>
-        <input
-          class="form-control"
-          type="text"
-          name="search"
-          [(ngModel)]="filtro"
-        />
-        <!-- <div>
-          <button routerLink="/criar">Adicionar Clinica</button>
-        </div> -->
-      </header>
-      <table class="table table-striped">
-        <thead>
-          <tr>
-            <th>Nome</th>
-            <th>Clinica</th>
-            <th>Dia</th>
-            <th>Horario</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr
-            *ngFor="
-              let agendamento of listaAgendamentos | filter: filtro;
-              let i = index
-            "
-          >
-            <td>{{ agendamento.paciente }}</td>
-            <td>{{ agendamento.clinicas.nome }}</td>
-            <td>{{ agendamento.dia }}</td>
-            <td>{{ agendamento.hora }}</td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
+  <div>
+    <header class="agendamentos-header">
+      <h2>Agendamentos</h2>
+      <input
+        class="filtro"
+        placeholder="Pesquisar Paciente"
+        type="text"
+        name="search"
+        [(ngModel)]="filtro"
+      />
+    </header>
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>Nome</th>
+          <th>Clinica</th>
+          <th>Dia</th>
+          <th>Horario</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr
+          *ngFor="
+            let agendamento of listaAgendamentos | filter: filtro;
+            let i = index
+          "
+        >
+          <td>{{ agendamento.paciente }}</td>
+          <td>{{ agendamento.clinicas.nome }}</td>
+          <td>{{ agendamento.dia }}</td>
+          <td>{{ agendamento.hora }}</td>
+        </tr>
+      </tbody>
+    </table>
   </div>
 </div>

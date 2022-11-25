@@ -1,89 +1,202 @@
 <section>
   <header>Adicionar Clinica</header>
-  <form>
+  <form
+    (ngSubmit)="incluirClinica()"
+    [formGroup]="formularioClinica"
+    #formDir="ngForm"
+  >
     <label for="nome">Nome</label>
     <input
       type="text"
       id="nome"
       name="nome"
       placeholder="Nome"
-      [(ngModel)]="clinica.nome"
+      formControlName="nome"
+      required
     />
+    <div *ngIf="nome.invalid && formDir.submitted" class="erro-validacao">
+      <p *ngIf="nome.errors?.['required']">O Campo é obrigatorio</p>
+    </div>
     <label for="especialidade">Especialidade</label>
     <input
       type="text"
       id="especialidade"
       name="especialidade"
       placeholder="Especialidade"
-      [(ngModel)]="clinica.especialidade"
+      formControlName="especialidade"
+      required
     />
-    <label for="estado">Estado</label>
+    <div
+      *ngIf="especialidade.invalid && formDir.submitted"
+      class="erro-validacao"
+    >
+      <p *ngIf="especialidade.errors?.['required']">O Campo é obrigatorio</p>
+    </div>
+    <label for="cnpj">Cnpj</label>
     <input
       type="text"
-      id="estado"
-      name="estado"
-      placeholder="Estado"
-      [(ngModel)]="clinica.estado"
+      id="cnpj"
+      name="cnpj"
+      placeholder="Cnpj"
+      mask="00.000.000/0000-00"
+      formControlName="cnpj"
+      required
     />
+    <div *ngIf="cnpj.invalid && formDir.submitted" class="erro-validacao">
+      <p *ngIf="cnpj.errors?.['required']">O Campo é obrigatorio</p>
+    </div>
+    <div formGroupName="atendimento">
+      <label for="time">Horario de Funcionamento</label>
+      <input
+        type="time"
+        id="inicio"
+        name="time"
+        placeholder="Inicio do horario de funcionamento"
+        formControlName="inicio"
+      />
+      <div *ngIf="inicio.invalid && formDir.submitted" class="erro-validacao">
+        <p *ngIf="inicio.errors?.['required']">O Campo é obrigatorio</p>
+      </div>
+      <input
+        type="time"
+        id="fim"
+        name="time"
+        placeholder="Fim do horario de funcionamento"
+        formControlName="fim"
+      />
+
+      <div *ngIf="fim.invalid && formDir.submitted" class="erro-validacao">
+        <p *ngIf="fim.errors?.['required']">O Campo é obrigatorio</p>
+      </div>
+    </div>
+    <label for="cep">Cep</label>
+    <input
+      type="text"
+      id="cep"
+      name="cep"
+      placeholder="Cep"
+      mask="00000-000"
+      formControlName="cep"
+    />
+    <div *ngIf="cep.invalid && formDir.submitted" class="erro-validacao">
+      <p *ngIf="cep.errors?.['required']">O Campo é obrigatorio</p>
+    </div>
+    <label for="estado">Estado</label>
+    <select name="uf" id="uf" formControlName="estado">
+      >
+      <option value="">Selecione</option>
+      <option value="AC">Acre</option>
+      <option value="AL">Alagoas</option>
+      <option value="AP">Amapá</option>
+      <option value="AM">Amazonas</option>
+      <option value="BA">Bahia</option>
+      <option value="CE">Ceará</option>
+      <option value="DF">Distrito Federal</option>
+      <option value="ES">Espírito Santo</option>
+      <option value="GO">Goiás</option>
+      <option value="MA">Maranhão</option>
+      <option value="MT">Mato Grosso</option>
+      <option value="MS">Mato Grosso do Sul</option>
+      <option value="MG">Minas Gerais</option>
+      <option value="PA">Pará</option>
+      <option value="PB">Paraíba</option>
+      <option value="PR">Paraná</option>
+      <option value="PE">Pernambuco</option>
+      <option value="PI">Piauí</option>
+      <option value="RJ">Rio de Janeiro</option>
+      <option value="RN">Rio Grande do Norte</option>
+      <option value="RS">Rio Grande do Sul</option>
+      <option value="RO">Rondônia</option>
+      <option value="RR">Roraima</option>
+      <option value="SC">Santa Catarina</option>
+      <option value="SP">São Paulo</option>
+      <option value="SE">Sergipe</option>
+      <option value="TO">Tocantins</option>
+    </select>
+    <div *ngIf="estado.invalid && formDir.submitted" class="erro-validacao">
+      <p *ngIf="estado.errors?.['required']">O Campo é obrigatorio</p>
+    </div>
     <label for="cidade">Cidade</label>
     <input
       type="text"
       id="cidade"
       name="cidade"
       placeholder="Cidade"
-      [(ngModel)]="clinica.cidade"
+      formControlName="cidade"
     />
+    <div *ngIf="cidade.invalid && formDir.submitted" class="erro-validacao">
+      <p *ngIf="cidade.errors?.['required']">O Campo é obrigatorio</p>
+    </div>
     <label for="bairro">Bairro</label>
     <input
       type="text"
       id="bairro"
       name="bairro"
       placeholder="Bairro"
-      [(ngModel)]="clinica.bairro"
+      formControlName="bairro"
     />
+    <div *ngIf="bairro.invalid && formDir.submitted" class="erro-validacao">
+      <p *ngIf="bairro.errors?.['required']">O Campo é obrigatorio</p>
+    </div>
     <label for="endereço">Endereço</label>
     <input
       type="text"
       id="endereço"
-      name="nendereçoome"
+      name="endereço"
       placeholder="Endereço"
-      [(ngModel)]="clinica['endereço']"
+      formControlName="endereco"
     />
+    <div *ngIf="endereco.invalid && formDir.submitted" class="erro-validacao">
+      <p *ngIf="endereco.errors?.['required']">O Campo é obrigatorio</p>
+    </div>
     <label for="numero">Numero</label>
     <input
       type="text"
       id="numero"
       name="numero"
       placeholder="Numero"
-      [(ngModel)]="clinica.numero"
+      formControlName="numero"
     />
+    <div *ngIf="numero.invalid && formDir.submitted" class="erro-validacao">
+      <p *ngIf="numero.errors?.['required']">O Campo é obrigatorio</p>
+    </div>
     <label for="status">Status</label>
-    <input
-      type="text"
-      id="status"
-      name="status"
-      placeholder="Status"
-      [(ngModel)]="clinica.status"
-    />
+    <select name="uf" id="uf" formControlName="status">
+      <option value="">Selecione</option>
+      <option value="Ativo">Ativo</option>
+      <option value="Inativo">Inativo</option>
+    </select>
+    <div *ngIf="status.invalid && formDir.submitted" class="erro-validacao">
+      <p *ngIf="status.errors?.['required']">O Campo é obrigatorio</p>
+    </div>
     <label for="preço">Preço</label>
     <input
       type="text"
       id="preço"
       name="preço"
       placeholder="Preço"
-      [(ngModel)]="clinica['preço']"
+      mask="separator.0"
+      thousandSeparator="."
+      formControlName="preco"
     />
+    <div *ngIf="preco.invalid && formDir.submitted" class="erro-validacao">
+      <p *ngIf="preco.errors?.['required']">O Campo é obrigatorio</p>
+    </div>
     <label for="telefone">Telefone</label>
     <input
       type="text"
       id="telefone"
       name="telefone"
       placeholder="Telefone"
-      [(ngModel)]="clinica.telefone"
+      mask="(00) 00000-0000"
+      formControlName="telefone"
     />
-    <div>
-      <button (click)="incluirClinica()">Salvar</button>
-      <button (click)="cancelar()">Cancelar</button>
+    <div *ngIf="telefone.invalid && formDir.submitted" class="erro-validacao">
+      <p *ngIf="telefone.errors?.['required']">O Campo é obrigatorio</p>
+    </div>
+    <div class="botoes">
+      <button class="salvar" type="submit">Salvar</button>
+      <button class="cancelar" (click)="cancelar()">Cancelar</button>
     </div>
   </form>
 </section>

@@ -43,7 +43,7 @@
                 | orderBy: key:reverse
                 | paginate
                   : {
-                      itemsPerPage: 10,
+                      itemsPerPage: 6,
                       currentPage: paginaAtual
                     };
               let i = index
@@ -58,7 +58,7 @@
               {{
                 clinica.bairro +
                   " - " +
-                  clinica["endereço"] +
+                  clinica["endereco"] +
                   "," +
                   clinica.numero
               }}
@@ -68,7 +68,7 @@
             </td>
             <td>{{ clinica.cep }}</td>
             <td>{{ clinica.cnpj }}</td>
-            <td>{{ clinica["preço"] }}</td>
+            <td>{{ clinica["preco"] }}</td>
             <td>{{ clinica.status }}</td>
             <td class="opcoes">
               <a class="edit" routerLink="/editar/{{ clinica.id }}">
