@@ -17,7 +17,6 @@ export class ListarAgendamentosComponent {
   ngOnInit(): void {
     this.service.listar().subscribe((agendamentos) => {
       this.listaAgendamentos = agendamentos;
-      console.log(agendamentos);
     });
   }
 }

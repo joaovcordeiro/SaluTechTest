@@ -17,7 +17,6 @@ export class ListarClinicasComponent {
   ngOnInit(): void {
     this.service.listar().subscribe((clinicas) => {
       this.listaClinicas = clinicas;
-      console.log(clinicas);
     });
   }
 
