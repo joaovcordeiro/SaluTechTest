@@ -1,27 +1,70 @@
-# SaluTec
+# SaluTech
+## Descrição do Projeto
+<p align="center">Projeto desenvolvido em Angular para teste tecnico na Salu HealthTec</p>
+<h1 align="center">
+  <img alt="SaluTech" title="#Salu" src="/src/assets/SaluTechTest.png" />
+</h1>
+<h1 align="center">
+    <a href="https://angular.io">🔗 Angular</a>
+</h1>
+<p align="center">🚀 framework para construir interfaces do usuário com componentes reutilizáveis</p>
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.0.1.
+<!--ts-->
+   * [Pré-requisitos](#Pré-requisitos)
+   * [Como usar](#como-usar)
+   * [Tecnologias](#tecnologias)
+<!--te-->
 
-## Development server
+### Features
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+- [x] Cadastro de clinicas
+- [x] Visualização de clinicas
+- [x] Remoção de clinicas
+- [x] Atualização de clinicas
+- [x] Visuzalização de Agendamentos
 
-## Code scaffolding
+### Pré-requisitos
+Para rodar este projeto é necessario ter as seguintes ferramentas:
+[Git](https://git-scm.com), [Node.js](https://nodejs.org/en/).
+Tambem é recomendada a utilização de um editor de codigo como [VSCode](https://code.visualstudio.com/)
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
 
-## Build
+### Como usar
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+### 🎲 Rodando o Back End (servidor)
 
-## Running unit tests
+```bash
+  # Clone este repositório
+  $ git clone <https://github.com/joaovcordeiro/SaluTechTest.git>
+  
+  # Acesse a pasta do backend no terminal/cmd
+  $ cd backend
+  
+  # Instale as dependências
+  $ npm install
+  
+  # Excute o seguinte comando para subir o servidor na porta:3000
+  $ npm start
+```
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+### 🎲 Rodando o Front End 
 
-## Running end-to-end tests
+```bash
+  # Após subir o servidor, com outro terminal instale as dependencias do frontend
+  $ npm install
+  
+  # Excute o seguinte comando para subir o projeto na porta:4200
+  $ npm start
+  
+  # Acesse o projeto atraves do navegador na sua maquina local localhost:4200
+  
+```
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+### 🛠 Tecnologias
 
-## Further help
+As seguintes ferramentas foram utilizadas na construção do projeto:
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+- [Angular](https://angular.io)
+- [TypeScript](https://www.typescriptlang.org/)
+- [Json-Server](https://www.npmjs.com/package/json-server)
+
