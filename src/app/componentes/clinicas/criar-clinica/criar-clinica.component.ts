@@ -1,4 +1,3 @@
-import { Clinica } from 'src/Interfaces/ClinicaInterface';
 import { Router } from '@angular/router';
 import { ClinicasService } from './../../clinicas.service';
 import { Component } from '@angular/core';
